@@ -1,0 +1,832 @@
+/**
+ * How Normal Am I - Main Stylesheet
+ */
+
+/* Container */
+.hnai-container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #333;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Common styles */
+.hnai-screen {
+    padding: 30px;
+}
+
+.hnai-hidden {
+    display: none;
+}
+
+.hnai-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hnai-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hnai-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.hnai-btn {
+    display: inline-block;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px 5px;
+    text-align: center;
+}
+
+.hnai-btn:hover {
+    background-color: #0d62d1;
+}
+
+.hnai-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.hnai-btn-secondary {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.hnai-btn-secondary:hover {
+    background-color: #e9e9e9;
+}
+
+.hnai-btn-loading {
+    position: relative;
+    color: transparent !important;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.hnai-btn-loading:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -8px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: hnai-button-spinner 0.8s linear infinite;
+}
+
+@keyframes hnai-button-spinner {
+    to {transform: rotate(360deg);}
+}
+
+/* Terms and conditions */
+.hnai-terms {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.hnai-terms label {
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.hnai-terms-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-top: 10px;
+}
+
+.hnai-terms-text {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.hnai-terms-checkbox:checked ~ .hnai-terms-content {
+    max-height: 500px;
+}
+
+.hnai-mobile-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Camera */
+.hnai-camera-container {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+#hnai-video, #hnai-canvas {
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    border-radius: 5px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 480px;
+}
+
+#hnai-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.hnai-loading-models {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 80%;
+    z-index: 100;
+}
+
+.hnai-loading-models h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1a73e8;
+}
+
+.hnai-loading-progress-container {
+    margin: 15px 0;
+}
+
+.hnai-loading-progress-bar {
+    height: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+#hnai-loading-progress {
+    height: 100%;
+    background-color: #1a73e8;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#hnai-loading-percentage {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.hnai-loading-help-text {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+.hnai-loader {
+    border: 5px solid #333;
+    border-top: 5px solid #1a73e8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1.5s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hnai-camera-error {
+    text-align: center;
+    background-color: #fee;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Age selection */
+.hnai-age-selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.hnai-age-option {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.hnai-age-option:hover {
+    background-color: #e9e9e9;
+    transform: scale(1.05);
+    border-color: #ddd;
+}
+
+.hnai-age-option.selected {
+    background-color: #1a73e8;
+    color: #fff;
+    border-color: #0d62d1;
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+/* Progress table */
+.hnai-progress-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.hnai-progress-header, .hnai-progress-row {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.hnai-progress-header {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.hnai-progress-column {
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Analysis screens */
+.hnai-score-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hnai-score-label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.hnai-score-value {
+    font-size: 60px;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.hnai-beauty-tip, .hnai-bmi-tip {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+    font-style: italic;
+}
+
+.hnai-age-label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.hnai-age-value {
+    font-size: 60px;
+    font-weight: bold;
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hnai-age-lie, .hnai-gender-result, .hnai-beauty-comparison, .hnai-bmi-comparison {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Faceprint */
+.hnai-faceprint-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#hnai-faceprint-canvas {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Emotion */
+.hnai-emotion-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hnai-mouse-tracker, .hnai-emotion-result {
+    margin: 20px 0;
+}
+
+#hnai-emotion-value {
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+/* Life expectancy */
+.hnai-life-result {
+    text-align: center;
+    font-size: 24px;
+    margin: 30px 0;
+}
+
+/* Data sharing */
+.hnai-data-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Results screen */
+.hnai-final-score {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#hnai-normality-score {
+    font-size: 100px;
+    font-weight: bold;
+    color: #1a73e8;
+    line-height: 1;
+}
+
+.hnai-normality-label {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.hnai-share {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.hnai-share h3 {
+    margin-bottom: 15px;
+}
+
+.hnai-share-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.hnai-share-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.hnai-share-twitter {
+    background-color: #1da1f2;
+}
+
+.hnai-share-facebook {
+    background-color: #4267b2;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hnai-screen {
+        padding: 20px;
+    }
+    
+    .hnai-header h2 {
+        font-size: 24px;
+    }
+    
+    .hnai-btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .hnai-score-value, .hnai-age-value {
+        font-size: 48px;
+    }
+    
+    #hnai-normality-score {
+        font-size: 80px;
+    }
+}
+
+.hnai-screen-description {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hnai-instruction-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.hnai-note {
+    font-size: 13px;
+    color: #777;
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+.hnai-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hnai-steps-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.hnai-step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #777;
+    font-size: 14px;
+}
+
+.hnai-step-active {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.hnai-step-completed {
+    background-color: #34a853;
+    color: white;
+}
+
+.hnai-analyzing-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.hnai-analyzing-message .hnai-loader {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+    margin-bottom: 10px;
+}
+
+.hnai-analyzing-message p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.hnai-progress-container h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.hnai-analysis-counter {
+    background-color: #f5f5f5;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.hnai-current-analysis, .hnai-total-analyses {
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.hnai-result-explanation {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #555;
+}
+
+.hnai-beauty-tip, .hnai-bmi-tip {
+    background-color: #e6f7ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    border-left: 4px solid #1a73e8;
+}
+
+.hnai-final-score-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.hnai-score-explanation {
+    margin-top: 25px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.hnai-score-explanation p {
+    margin-bottom: 15px;
+}
+
+.hnai-share-section {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.hnai-share-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hnai-share-section p {
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #555;
+}
+
+.hnai-share-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hnai-disclaimer {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.hnai-analysis-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.hnai-camera-preview {
+    flex: 1;
+    min-width: 250px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #eee;
+}
+
+.hnai-camera-preview h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+.hnai-camera-preview-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.hnai-camera-preview-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: 150px;
+}
+
+.hnai-camera-preview-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hnai-camera-tip {
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #666;
+}
+
+.hnai-analysis-results {
+    flex: 2;
+    min-width: 280px;
+}
+
+.hnai-age-tip {
+    background-color: #e6f7ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    border-left: 4px solid #1a73e8;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .hnai-analysis-layout {
+        flex-direction: column;
+    }
+    
+    .hnai-camera-preview {
+        margin-bottom: 20px;
+    }
+}
+
+/* Mini floating camera preview for mobile */
+.hnai-mini-preview {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+    touch-action: none; /* For drag support */
+    border: 2px solid #1a73e8;
+    display: none; /* Hidden by default */
+}
+
+.hnai-mini-preview.active {
+    display: block;
+}
+
+.hnai-mini-preview-header {
+    background-color: #1a73e8;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    cursor: move;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hnai-mini-preview-title {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hnai-mini-preview-toggle {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.hnai-mini-preview-container {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 30px);
+    overflow: hidden;
+}
+
+.hnai-mini-preview-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hnai-mini-preview-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Camera preview toggle button */
+.hnai-preview-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .hnai-preview-toggle-btn {
+        display: block; /* Show on mobile */
+    }
+    
+    /* Hide the original camera preview on analysis screens when mini mode is active */
+    .hnai-mini-preview.active ~ .hnai-analysis-layout .hnai-camera-preview {
+        display: none;
+    }
+} 
