@@ -331,6 +331,22 @@
                 previewVideo = document.getElementById('hnai-preview-video-age');
                 previewCanvas = document.getElementById('hnai-preview-canvas-age');
                 break;
+            case 7: // Gender screen
+                previewVideo = document.getElementById('hnai-preview-video-gender');
+                previewCanvas = document.getElementById('hnai-preview-canvas-gender');
+                break;
+            case 8: // Faceprint screen
+                previewVideo = document.getElementById('hnai-preview-video-faceprint');
+                previewCanvas = document.getElementById('hnai-preview-canvas-faceprint');
+                break;
+            case 9: // Emotion screen
+                previewVideo = document.getElementById('hnai-preview-video-emotion');
+                previewCanvas = document.getElementById('hnai-preview-canvas-emotion');
+                break;
+            case 10: // Life expectancy screen
+                previewVideo = document.getElementById('hnai-preview-video-life');
+                previewCanvas = document.getElementById('hnai-preview-canvas-life');
+                break;
             default:
                 return; // No preview for this screen
         }

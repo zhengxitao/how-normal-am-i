@@ -81,13 +81,13 @@ if (!defined('ABSPATH')) {
         </div>
         <div class="hnai-content">
             <p class="hnai-instruction-text"><?php _e('Select your age from the options below:', 'how-normal-am-i'); ?></p>
-            <div class="hnai-age-selector">
-                <?php 
-                for ($i = 10; $i <= 95; $i += 5) {
-                    echo '<div class="hnai-age-option" data-age="' . $i . '">' . $i . '</div>';
-                }
-                ?>
-            </div>
+        <div class="hnai-age-selector">
+            <?php 
+            for ($i = 10; $i <= 95; $i += 5) {
+                echo '<div class="hnai-age-option" data-age="' . $i . '">' . $i . '</div>';
+            }
+            ?>
+        </div>
             <div class="hnai-button-container">
                 <button id="hnai-continue-age-btn" class="hnai-btn" disabled><?php _e('Continue with Selected Age', 'how-normal-am-i'); ?></button>
                 <button id="hnai-skip-age-btn" class="hnai-btn hnai-btn-secondary"><?php _e('Continue without Sharing Age', 'how-normal-am-i'); ?></button>
@@ -111,95 +111,95 @@ if (!defined('ABSPATH')) {
             <div class="hnai-analyzing-message">
                 <div class="hnai-loader"></div>
                 <p><?php _e('Analyzing facial features...', 'how-normal-am-i'); ?></p>
-            </div>
-            <div class="hnai-progress-container">
+        </div>
+        <div class="hnai-progress-container">
                 <h3><?php _e('Data Collection Summary', 'how-normal-am-i'); ?></h3>
-                <div class="hnai-progress-table">
-                    <div class="hnai-progress-header">
-                        <div class="hnai-progress-column"><?php _e('Metric', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column"><?php _e('You', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column"><?php _e('Others', 'how-normal-am-i'); ?></div>
-                    </div>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Read terms?', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-terms-read-you">-</div>
-                        <div class="hnai-progress-column"><?php _e('No', 'how-normal-am-i'); ?></div>
-                    </div>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Shared age?', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-age-shared-you">-</div>
-                        <div class="hnai-progress-column"><?php _e('No', 'how-normal-am-i'); ?></div>
-                    </div>
-                    <?php if ($options['enable_beauty_score'] === 'yes'): ?>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Beauty', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-beauty-you">...</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <?php endif; ?>
-                    <?php if ($options['enable_age_prediction'] === 'yes'): ?>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Age', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-age-you">...</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Lied about age?', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-age-lie-you">No</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <?php endif; ?>
-                    <?php if ($options['enable_gender_recognition'] === 'yes'): ?>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Gender', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-gender-you">...</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <?php endif; ?>
-                    <?php if ($options['enable_bmi_estimation'] === 'yes'): ?>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('BMI', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-bmi-you">...</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <?php endif; ?>
-                    <?php if ($options['enable_life_expectancy'] === 'yes'): ?>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Life expectancy', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-life-you">...</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <?php endif; ?>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Came closer?', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-closer-you">No</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <?php if ($options['enable_emotion_detection'] === 'yes'): ?>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Expression', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-expression-you">...</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <?php endif; ?>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Interactions', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-interactions-you">...</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Curious', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-curious-you">Yes</div>
-                        <div class="hnai-progress-column"><?php _e('No', 'how-normal-am-i'); ?></div>
-                    </div>
-                    <?php if ($options['enable_data_sharing'] === 'yes'): ?>
-                    <div class="hnai-progress-row">
-                        <div class="hnai-progress-column"><?php _e('Shared data?', 'how-normal-am-i'); ?></div>
-                        <div class="hnai-progress-column" id="hnai-shared-data-you">...</div>
-                        <div class="hnai-progress-column">...</div>
-                    </div>
-                    <?php endif; ?>
+            <div class="hnai-progress-table">
+                <div class="hnai-progress-header">
+                    <div class="hnai-progress-column"><?php _e('Metric', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column"><?php _e('You', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column"><?php _e('Others', 'how-normal-am-i'); ?></div>
                 </div>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Read terms?', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-terms-read-you">-</div>
+                    <div class="hnai-progress-column"><?php _e('No', 'how-normal-am-i'); ?></div>
+                </div>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Shared age?', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-age-shared-you">-</div>
+                    <div class="hnai-progress-column"><?php _e('No', 'how-normal-am-i'); ?></div>
+                </div>
+                <?php if ($options['enable_beauty_score'] === 'yes'): ?>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Beauty', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-beauty-you">...</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <?php endif; ?>
+                <?php if ($options['enable_age_prediction'] === 'yes'): ?>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Age', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-age-you">...</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Lied about age?', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-age-lie-you">No</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <?php endif; ?>
+                <?php if ($options['enable_gender_recognition'] === 'yes'): ?>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Gender', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-gender-you">...</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <?php endif; ?>
+                <?php if ($options['enable_bmi_estimation'] === 'yes'): ?>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('BMI', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-bmi-you">...</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <?php endif; ?>
+                <?php if ($options['enable_life_expectancy'] === 'yes'): ?>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Life expectancy', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-life-you">...</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <?php endif; ?>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Came closer?', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-closer-you">No</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <?php if ($options['enable_emotion_detection'] === 'yes'): ?>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Expression', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-expression-you">...</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <?php endif; ?>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Interactions', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-interactions-you">...</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Curious', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-curious-you">Yes</div>
+                    <div class="hnai-progress-column"><?php _e('No', 'how-normal-am-i'); ?></div>
+                </div>
+                <?php if ($options['enable_data_sharing'] === 'yes'): ?>
+                <div class="hnai-progress-row">
+                    <div class="hnai-progress-column"><?php _e('Shared data?', 'how-normal-am-i'); ?></div>
+                    <div class="hnai-progress-column" id="hnai-shared-data-you">...</div>
+                    <div class="hnai-progress-column">...</div>
+                </div>
+                <?php endif; ?>
+            </div>
             </div>
             <p class="hnai-note"><?php _e('We\'ll automatically continue to the analysis results when ready.', 'how-normal-am-i'); ?></p>
         </div>
@@ -234,16 +234,16 @@ if (!defined('ABSPATH')) {
                 
                 <!-- Analysis result section -->
                 <div class="hnai-analysis-results">
-                    <div class="hnai-beauty-score">
-                        <div class="hnai-score-container">
+            <div class="hnai-beauty-score">
+                <div class="hnai-score-container">
                             <div class="hnai-score-label"><?php _e('Your Score (scale from 0 to 10)', 'how-normal-am-i'); ?></div>
-                            <div class="hnai-score-value" id="hnai-beauty-score">...</div>
-                        </div>
+                    <div class="hnai-score-value" id="hnai-beauty-score">...</div>
+                </div>
                         <div class="hnai-result-explanation">
                             <p><?php _e('This score is calculated based on the golden ratio, facial symmetry, and other mathematical proportions.', 'how-normal-am-i'); ?></p>
-                        </div>
-                        <div class="hnai-beauty-comparison" id="hnai-beauty-comparison">
-                            <p><?php _e('You are more attractive than ...% of the population.', 'how-normal-am-i'); ?></p>
+                </div>
+                <div class="hnai-beauty-comparison" id="hnai-beauty-comparison">
+                    <p><?php _e('You are more attractive than ...% of the population.', 'how-normal-am-i'); ?></p>
                         </div>
                         <div class="hnai-beauty-tip">
                             <p><strong><?php _e('Tip:', 'how-normal-am-i'); ?></strong> <?php _e('Try different lighting or expressions to see changes in your score.', 'how-normal-am-i'); ?></p>
@@ -295,8 +295,8 @@ if (!defined('ABSPATH')) {
                         <div class="hnai-result-explanation">
                             <p><?php _e('BMI is estimated based on facial roundness, fullness, and other features that may correlate with body mass index.', 'how-normal-am-i'); ?></p>
                         </div>
-                        <div class="hnai-bmi-comparison" id="hnai-bmi-comparison">
-                            <p><?php _e('The average BMI worldwide is 24.7.', 'how-normal-am-i'); ?></p>
+                <div class="hnai-bmi-comparison" id="hnai-bmi-comparison">
+                    <p><?php _e('The average BMI worldwide is 24.7.', 'how-normal-am-i'); ?></p>
                         </div>
                         <div class="hnai-bmi-tip">
                             <p><strong><?php _e('Tip:', 'how-normal-am-i'); ?></strong> <?php _e('Try raising your eyebrows or tilting your head to see how it affects the estimate.', 'how-normal-am-i'); ?></p>
@@ -340,7 +340,7 @@ if (!defined('ABSPATH')) {
                 
                 <!-- Analysis result section -->
                 <div class="hnai-analysis-results">
-                    <div class="hnai-age-result">
+            <div class="hnai-age-result">
                         <div class="hnai-score-container">
                             <div class="hnai-score-label"><?php _e('AI Predicted Age', 'how-normal-am-i'); ?></div>
                             <div class="hnai-score-value" id="hnai-age-value">...</div>
@@ -349,8 +349,8 @@ if (!defined('ABSPATH')) {
                             <p><?php _e('This prediction is based on facial markers like wrinkles, skin texture, and facial proportions that change with age.', 'how-normal-am-i'); ?></p>
                         </div>
                         <?php if (true): // Always show this section regardless of whether user shared age ?>
-                        <div class="hnai-age-lie" id="hnai-age-lie">
-                            <p><?php _e('You didn\'t lie about your age.', 'how-normal-am-i'); ?></p>
+                <div class="hnai-age-lie" id="hnai-age-lie">
+                    <p><?php _e('You didn\'t lie about your age.', 'how-normal-am-i'); ?></p>
                         </div>
                         <?php endif; ?>
                         <div class="hnai-age-tip">
@@ -371,10 +371,34 @@ if (!defined('ABSPATH')) {
     <div class="hnai-screen hnai-hidden" id="hnai-gender-screen">
         <div class="hnai-header">
             <h2><?php _e('Gender', 'how-normal-am-i'); ?></h2>
+            <p class="hnai-screen-description"><?php _e('Our AI analyzes your facial features to determine gender.', 'how-normal-am-i'); ?></p>
+            <div class="hnai-steps-indicator">
+                <span class="hnai-step hnai-step-completed">1</span>
+                <span class="hnai-step hnai-step-completed">2</span>
+                <span class="hnai-step hnai-step-active">3</span>
+            </div>
+            <div class="hnai-analysis-counter">
+                <span class="hnai-current-analysis">4</span>/<span class="hnai-total-analyses">5</span>
+            </div>
         </div>
         <div class="hnai-content">
-            <div class="hnai-gender-result">
-                <p id="hnai-gender-text"><?php _e('The algorithm is ...% sure that you\'re ...', 'how-normal-am-i'); ?></p>
+            <div class="hnai-analysis-layout">
+                <!-- Camera preview section -->
+                <div class="hnai-camera-preview">
+                    <h3><?php _e('Live Camera', 'how-normal-am-i'); ?></h3>
+                    <div class="hnai-camera-preview-container">
+                        <video id="hnai-preview-video-gender" playsinline autoplay muted></video>
+                        <canvas id="hnai-preview-canvas-gender"></canvas>
+                    </div>
+                    <p class="hnai-camera-tip"><?php _e('Different angles can affect how the AI perceives your gender.', 'how-normal-am-i'); ?></p>
+                </div>
+                
+                <!-- Analysis result section -->
+                <div class="hnai-analysis-results">
+                    <div class="hnai-gender-result">
+                        <p id="hnai-gender-text"><?php _e('The algorithm is ...% sure that you\'re ...', 'how-normal-am-i'); ?></p>
+                    </div>
+                </div>
             </div>
             <button class="hnai-btn hnai-continue-btn"><?php _e('Continue', 'how-normal-am-i'); ?></button>
         </div>
@@ -385,11 +409,35 @@ if (!defined('ABSPATH')) {
     <div class="hnai-screen hnai-hidden" id="hnai-faceprint-screen">
         <div class="hnai-header">
             <h2><?php _e('Your face print', 'how-normal-am-i'); ?></h2>
+            <p class="hnai-screen-description"><?php _e('This is a digital representation of your unique facial features.', 'how-normal-am-i'); ?></p>
+            <div class="hnai-steps-indicator">
+                <span class="hnai-step hnai-step-completed">1</span>
+                <span class="hnai-step hnai-step-completed">2</span>
+                <span class="hnai-step hnai-step-active">3</span>
+            </div>
+            <div class="hnai-analysis-counter">
+                <span class="hnai-current-analysis">5</span>/<span class="hnai-total-analyses">5</span>
+            </div>
         </div>
         <div class="hnai-content">
-            <div class="hnai-faceprint-container">
-                <canvas id="hnai-faceprint-canvas"></canvas>
-                <p><?php _e('This is a digital \'finger print\' of your face.', 'how-normal-am-i'); ?></p>
+            <div class="hnai-analysis-layout">
+                <!-- Camera preview section -->
+                <div class="hnai-camera-preview">
+                    <h3><?php _e('Live Camera', 'how-normal-am-i'); ?></h3>
+                    <div class="hnai-camera-preview-container">
+                        <video id="hnai-preview-video-faceprint" playsinline autoplay muted></video>
+                        <canvas id="hnai-preview-canvas-faceprint"></canvas>
+                    </div>
+                    <p class="hnai-camera-tip"><?php _e('Keep your face centered for the most accurate face print.', 'how-normal-am-i'); ?></p>
+                </div>
+                
+                <!-- Analysis result section -->
+                <div class="hnai-analysis-results">
+                    <div class="hnai-faceprint-container">
+                        <canvas id="hnai-faceprint-canvas"></canvas>
+                        <p><?php _e('This is a digital \'finger print\' of your face.', 'how-normal-am-i'); ?></p>
+                    </div>
+                </div>
             </div>
             <button class="hnai-btn hnai-continue-btn"><?php _e('Continue', 'how-normal-am-i'); ?></button>
         </div>
@@ -399,14 +447,38 @@ if (!defined('ABSPATH')) {
     <div class="hnai-screen hnai-hidden" id="hnai-emotion-screen">
         <div class="hnai-header">
             <h2><?php _e('Interactions', 'how-normal-am-i'); ?></h2>
+            <p class="hnai-screen-description"><?php _e('Our AI analyzes your facial expressions and interactions.', 'how-normal-am-i'); ?></p>
+            <div class="hnai-steps-indicator">
+                <span class="hnai-step hnai-step-completed">1</span>
+                <span class="hnai-step hnai-step-completed">2</span>
+                <span class="hnai-step hnai-step-active">3</span>
+            </div>
+            <div class="hnai-analysis-counter">
+                <span class="hnai-current-analysis">6</span>/<span class="hnai-total-analyses">7</span>
+            </div>
         </div>
         <div class="hnai-content">
-            <div class="hnai-emotion-container">
-                <div class="hnai-mouse-tracker">
-                    <p><?php _e('You interacted with this page ... times.', 'how-normal-am-i'); ?></p>
+            <div class="hnai-analysis-layout">
+                <!-- Camera preview section -->
+                <div class="hnai-camera-preview">
+                    <h3><?php _e('Live Camera', 'how-normal-am-i'); ?></h3>
+                    <div class="hnai-camera-preview-container">
+                        <video id="hnai-preview-video-emotion" playsinline autoplay muted></video>
+                        <canvas id="hnai-preview-canvas-emotion"></canvas>
+                    </div>
+                    <p class="hnai-camera-tip"><?php _e('Try different expressions to see how the AI interprets them.', 'how-normal-am-i'); ?></p>
                 </div>
-                <div class="hnai-emotion-result">
-                    <p><?php _e('The dominant expression on your face is currently:', 'how-normal-am-i'); ?> <span id="hnai-emotion-value">...</span></p>
+                
+                <!-- Analysis result section -->
+                <div class="hnai-analysis-results">
+                    <div class="hnai-emotion-container">
+                        <div class="hnai-mouse-tracker">
+                            <p><?php _e('You interacted with this page ... times.', 'how-normal-am-i'); ?></p>
+                        </div>
+                        <div class="hnai-emotion-result">
+                            <p><?php _e('The dominant expression on your face is currently:', 'how-normal-am-i'); ?> <span id="hnai-emotion-value">...</span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button class="hnai-btn hnai-continue-btn"><?php _e('Continue', 'how-normal-am-i'); ?></button>
@@ -418,10 +490,34 @@ if (!defined('ABSPATH')) {
     <div class="hnai-screen hnai-hidden" id="hnai-life-screen">
         <div class="hnai-header">
             <h2><?php _e('Life expectancy', 'how-normal-am-i'); ?></h2>
+            <p class="hnai-screen-description"><?php _e('Our AI estimates your life expectancy based on facial features.', 'how-normal-am-i'); ?></p>
+            <div class="hnai-steps-indicator">
+                <span class="hnai-step hnai-step-completed">1</span>
+                <span class="hnai-step hnai-step-completed">2</span>
+                <span class="hnai-step hnai-step-active">3</span>
+            </div>
+            <div class="hnai-analysis-counter">
+                <span class="hnai-current-analysis">7</span>/<span class="hnai-total-analyses">7</span>
+            </div>
         </div>
         <div class="hnai-content">
-            <div class="hnai-life-result">
-                <p id="hnai-life-value"><?php _e('You have ... years left to live.', 'how-normal-am-i'); ?></p>
+            <div class="hnai-analysis-layout">
+                <!-- Camera preview section -->
+                <div class="hnai-camera-preview">
+                    <h3><?php _e('Live Camera', 'how-normal-am-i'); ?></h3>
+                    <div class="hnai-camera-preview-container">
+                        <video id="hnai-preview-video-life" playsinline autoplay muted></video>
+                        <canvas id="hnai-preview-canvas-life"></canvas>
+                    </div>
+                    <p class="hnai-camera-tip"><?php _e('Different facial expressions can affect your estimated life expectancy.', 'how-normal-am-i'); ?></p>
+                </div>
+                
+                <!-- Analysis result section -->
+                <div class="hnai-analysis-results">
+                    <div class="hnai-life-result">
+                        <p id="hnai-life-value"><?php _e('You have ... years left to live.', 'how-normal-am-i'); ?></p>
+                    </div>
+                </div>
             </div>
             <button class="hnai-btn hnai-continue-btn"><?php _e('Continue', 'how-normal-am-i'); ?></button>
         </div>
@@ -457,10 +553,10 @@ if (!defined('ABSPATH')) {
         </div>
         <div class="hnai-content">
             <div class="hnai-final-score-container">
-                <div class="hnai-final-score">
-                    <div id="hnai-normality-score">0%</div>
-                    <div class="hnai-normality-label"><?php _e('Normal', 'how-normal-am-i'); ?></div>
-                </div>
+            <div class="hnai-final-score">
+                <div id="hnai-normality-score">0%</div>
+                <div class="hnai-normality-label"><?php _e('Normal', 'how-normal-am-i'); ?></div>
+            </div>
                 <div class="hnai-score-explanation">
                     <p><?php _e('This score represents how closely your facial features, expressions, and characteristics align with the average values in our database.', 'how-normal-am-i'); ?></p>
                     <p><?php _e('Remember, being "normal" is just a statistical concept - the uniqueness of each person is what makes humans interesting!', 'how-normal-am-i'); ?></p>
@@ -477,7 +573,7 @@ if (!defined('ABSPATH')) {
             </div>
             
             <div class="hnai-button-container">
-                <button id="hnai-restart-btn" class="hnai-btn"><?php _e('Try Again', 'how-normal-am-i'); ?></button>
+            <button id="hnai-restart-btn" class="hnai-btn"><?php _e('Try Again', 'how-normal-am-i'); ?></button>
             </div>
             
             <p class="hnai-disclaimer"><?php _e('Disclaimer: This AI analysis is for entertainment purposes only and not scientifically validated.', 'how-normal-am-i'); ?></p>
